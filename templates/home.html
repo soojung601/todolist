@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <style>
+       
+        .insert_name{
+            border:none;
+            border-bottom: solid gray;
+            width:190px;
+            font-size:20px;
+            margin-left:10px;
+        }
+        .input_box{
+            margin-top:70px;
+            text-align: center;
+            font-size:30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input:focus{outline:none;}
+    </style>
+</head>
+<body>
+    
+    <div class="input_box">
+    <span>이름을 입력하세요 : </span>
+    <form action="/username" method="get">
+        <input type="text" name="username" class="insert_name" autofocus/ autocomplete="off"/>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+    function newset(){
+      const ul = document.createElement("ul");
+      ul.id = "list";
+      document.body.appendChild(ul);
+
+      const newname = document.getElementById("new").value;
+      document.getElementById("todolist").innerHTML= newname;
+
+      const namediv = document.getElementById("namediv");
+      namediv.remove();
+      }
+      function addFunction(){
+        const addedtext = document.getElementById("addtext").value;
+        const newli = document.createElement("li");
+        const newbt = document.createElement("button");
+        newbt.innerText = "X";
+        const newcontent = document.createTextNode(addedtext);
+
+        newli.appendChild(newbt);
+        newli.appendChild(newcontent);
+        document.getElementById("list").appendChild(newli);
+        document.getElementById("addtext").value = null;
+
+        newbt.addEventListener('click',function(){
+          document.getElementById("list").removeChild(newli);
+        })
+        newli.addEventListener('mouseover',function(){
+          newli.style.backgroundColor="DarkGrey"})
+          newli.addEventListener('mouseout',function(){
+          newli.style.backgroundColor="LightGray"
+          })
+        newli.addEventListener('click',function(){
+          if(newli.style.textDecoration==="none")
+          {return newli.style.textDecoration="line-through"}
+          else{return newli.style.textDecoration="none"}
+        })
+        }
+
+    </script>
+    <style>
+    li { list-style: none;
+      margin : 2px;
+      padding : 10px;
+    background-color : LightGray;
+  border : solid 1px;}
+    button { border : none;
+      background-color:Transparent;}
+    .title { text-align : center;
+    }
+    #addtext { border : none;
+      border-bottom-style : solid;}
+      #reset { color : red ;
+      border : none;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h2 id="todolist">My To Do Lists</h2>
+    <div id="namediv">
+    <input type="text" id="new" placeholder="name">
+    <button type="button" onclick="newset()">입력</button>
+  </div>
+    <input type="text" id="addtext" placeholder="to do">
+    <button type="button" onclick="addFunction()">Add</button>
+
+
+    <input type="button" onclick="removeall()" value="Reset" id="reset">
+  </body>
+</html>

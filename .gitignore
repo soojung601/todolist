@@ -1,0 +1,7 @@
+todolist.db
+todolist.gif
+.vscode/
+bin/
+lib/
+include/
+__pycache__/

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    
+</head>
+<body>
+    {% username = request.args.get('username')%}
+    <h2>
+        {{username}}'s To Do List
+    </h2>
+    <form action='/addlist' method='post'>
+    <input type="text" placeholder="Write to do list" name='addedtext'>
+    </form>
+    <section>
+        {%for list in userlist%}
+        <div>{{list[0]}}</div>
+        {%endfor%}
+    </section>
+</body>
+</html>
